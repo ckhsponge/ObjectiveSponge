@@ -7,18 +7,33 @@
 //
 
 #import "RootViewController.h"
-
+#import "ObjectiveSpongeAppDelegate.h"
+#import "Campaign.h"
+#import "CampaignViewController.h"
 
 @implementation RootViewController
 
-/*
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+	self.title = @"Campaigns";
+	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addItem:)];
+    self.navigationItem.rightBarButtonItem = addButton;
+	[addButton release];
+	UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
+	self.navigationItem.backBarButtonItem = backButton;
+	[backButton release];
 }
-*/
+
+- (void)addItem:sender {
+    if (campaignInputController == nil) {
+        campaignInputController = [[CampaignInputController alloc] init];
+    }
+	[self.navigationController pushViewController:campaignInputController animated:YES];
+}
 
 /*
 - (void)viewWillAppear:(BOOL)animated {
@@ -71,7 +86,7 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return [[ObjectiveSpongeAppDelegate instance].campaigns count];
 }
 
 
@@ -85,6 +100,8 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+	Campaign *campaign = [[ObjectiveSpongeAppDelegate instance].campaigns objectAtIndex:indexPath.row];
+	cell.textLabel.text = campaign.name;
 	// Configure the cell.
 
     return cell;
@@ -92,16 +109,17 @@
 
 
 
-/*
+
 // Override to support row selection in the table view.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     // Navigation logic may go here -- for example, create and push another view controller.
-	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
-	// [self.navigationController pushViewController:anotherViewController animated:YES];
-	// [anotherViewController release];
+	Campaign *campaign = [[ObjectiveSpongeAppDelegate instance].campaigns objectAtIndex:indexPath.row];
+	CampaignViewController *anotherViewController = [[CampaignViewController alloc] initWithCampaign:campaign];
+	[self.navigationController pushViewController:anotherViewController animated:YES];
+	[anotherViewController release];
 }
-*/
+
 
 
 /*
@@ -145,6 +163,7 @@
 
 
 - (void)dealloc {
+	[campaignInputController release];
     [super dealloc];
 }
 

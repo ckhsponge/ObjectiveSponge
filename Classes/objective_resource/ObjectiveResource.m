@@ -6,7 +6,7 @@
 //  Copyright 2009 Joshua Vickery. All rights reserved.
 //
 
-#import "NSObject+ObjectiveResource.h"
+#import "ObjectiveResource.h"
 #import "Connection.h"
 #import "Response.h"
 #import "CoreSupport.h"
@@ -21,7 +21,7 @@ static SEL _activeResourceSerializeMethod = nil;
 static NSString *_activeResourceProtocolExtension = @".xml";
 static ORSResponseFormat _format;
 
-@implementation NSObject (ObjectiveResource)
+@implementation ObjectiveResource : NSObject
 
 #pragma mark configuration methods
 + (NSString *)getRemoteSite {

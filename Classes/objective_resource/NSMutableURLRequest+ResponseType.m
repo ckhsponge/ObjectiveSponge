@@ -8,6 +8,7 @@
 
 #import "NSMutableURLRequest+ResponseType.h"
 #import "ObjectiveResource.h"
+#import "ObjectiveResourceConfig.h"
 #import "Connection.h"
 
 @implementation NSMutableURLRequest(ResponseType)

@@ -7,6 +7,7 @@
 //
 
 #import "ObjectiveResourceConfig.h"
+#import "ORSResponseFormat.h"
 
 @implementation ObjectiveResourceConfig
 

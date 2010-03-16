@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ObjectiveResource.h"
 
 
 @interface ORObject : NSObject {

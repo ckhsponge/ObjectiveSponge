@@ -26,4 +26,18 @@
 + (NSString *)getRemoteElementPath:(NSString *)elementId {
 	return [NSString stringWithFormat:@"%@%@/%@/analytics%@", [self getRemoteSite], [self getRemoteCollectionName], elementId, [self getRemoteProtocolExtension]];
 }
+
++ (NSMutableArray *) campaignsFromMap:(NSDictionary *) map {
+	if( !map || map.count == 0) { return [NSMutableArray arrayWithObjects:nil]; }
+	NSMutableArray *result = [NSMutableArray arrayWithCapacity:map.count];
+	NSEnumerator *enumerator = [map keyEnumerator];
+	NSString *key;
+	while ((key = [enumerator nextObject])) {
+		Campaign *campaign = [Campaign findWithId:key andToken:[map objectForKey:key]];
+		if(campaign) {
+			[result addObject:campaign];
+		}
+	}
+	return result;
+}
 @end

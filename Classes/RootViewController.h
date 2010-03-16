@@ -9,6 +9,7 @@
 
 @interface RootViewController : UITableViewController {
 	CampaignInputController *campaignInputController;
+	UIBarButtonItem *addButton;
 }
 
 @end

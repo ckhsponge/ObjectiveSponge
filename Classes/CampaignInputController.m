@@ -25,7 +25,22 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.title = @"Find Campaign";
+	self.title = @"Add Campaign";
+}
+
+- (void) submit:(id)sender {
+	NSString *campaignId = idField.text;
+	NSString *campaignToken = tokenField.text;
+	Campaign *campaign = [Campaign findWithId:campaignId andToken:campaignToken];
+	if( campaign ) {
+		[[ObjectiveSpongeAppDelegate instance] addCampaign:campaign];
+		[[ObjectiveSpongeAppDelegate instance].navigationController popToRootViewControllerAnimated:TRUE];
+		UITableViewController *topView = (UITableViewController *) [ObjectiveSpongeAppDelegate instance].navigationController.topViewController;
+		[[topView tableView] reloadData];
+	} else {
+		
+	}
+
 }
 
 

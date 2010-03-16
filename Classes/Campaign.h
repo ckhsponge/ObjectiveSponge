@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObjectiveResource.h"
 #import "ORObject.h"
 #import "Metric.h"
 
@@ -33,4 +32,5 @@
 @property (nonatomic , retain) Metric *metric;
 
 +(Campaign *) findWithId:(NSString *) campaignId andToken:(NSString *) token;
++ (NSMutableArray *) campaignsFromMap:(NSDictionary *) map;
 @end

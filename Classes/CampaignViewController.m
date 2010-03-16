@@ -27,6 +27,11 @@
 }
 */
 
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+	NSLog(@"got url: %@", url);
+	return YES;
+}
+
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -39,6 +44,10 @@
 	self.title = campaign.name;
 }
 
+-(void) viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	NSLog(@"viewDidAppear");
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

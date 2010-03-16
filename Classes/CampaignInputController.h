@@ -10,7 +10,8 @@
 
 
 @interface CampaignInputController : UIViewController {
-
+	IBOutlet UITextField *idField;
+	IBOutlet UITextField *tokenField;
 }
-
+- (IBAction) submit:(id) sender;
 @end

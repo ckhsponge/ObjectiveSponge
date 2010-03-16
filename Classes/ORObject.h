@@ -10,7 +10,7 @@
 #import "ObjectiveResource.h"
 
 
-@interface ORObject : NSObject {
+@interface ORObject : ObjectiveResource {
 
 }
 

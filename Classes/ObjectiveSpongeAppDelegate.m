@@ -9,6 +9,7 @@
 #import "ObjectiveSpongeAppDelegate.h"
 #import "RootViewController.h"
 #import "Campaign.h"
+#import "ObjectiveResourceConfig.h"
 
 
 @implementation ObjectiveSpongeAppDelegate

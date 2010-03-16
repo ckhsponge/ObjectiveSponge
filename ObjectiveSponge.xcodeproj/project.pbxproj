@@ -20,7 +20,7 @@
 		C1AB998F114B0537005A7928 /* ConnectionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB9945114B0537005A7928 /* ConnectionDelegate.m */; };
 		C1AB9990114B0537005A7928 /* NSHTTPURLResponse+Error.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB9947114B0537005A7928 /* NSHTTPURLResponse+Error.m */; };
 		C1AB9991114B0537005A7928 /* NSMutableURLRequest+ResponseType.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB9949114B0537005A7928 /* NSMutableURLRequest+ResponseType.m */; };
-		C1AB9992114B0537005A7928 /* NSObject+ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB994B114B0537005A7928 /* NSObject+ObjectiveResource.m */; };
+		C1AB9992114B0537005A7928 /* ObjectiveResource.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB994B114B0537005A7928 /* ObjectiveResource.m */; };
 		C1AB9993114B0537005A7928 /* NSString+InflectionSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB9951114B0537005A7928 /* NSString+InflectionSupport.m */; };
 		C1AB9994114B0537005A7928 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB9953114B0537005A7928 /* NSData+Additions.m */; };
 		C1AB9995114B0537005A7928 /* NSObject+PropertySupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C1AB9955114B0537005A7928 /* NSObject+PropertySupport.m */; };
@@ -70,6 +70,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FAFDDB5114DC46E00AC10D8 /* PropertyListFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyListFile.h; sourceTree = "<group>"; };
 		5FAFDDB6114DC46E00AC10D8 /* PropertyListFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyListFile.m; sourceTree = "<group>"; };
+		5FAFDEFF114F613F00AC10D8 /* ORSResponseFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSResponseFormat.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* ObjectiveSponge-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ObjectiveSponge-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		C1AB9942114B0537005A7928 /* Connection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Connection.h; sourceTree = "<group>"; };
 		C1AB9943114B0537005A7928 /* Connection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Connection.m; sourceTree = "<group>"; };
@@ -79,8 +80,7 @@
 		C1AB9947114B0537005A7928 /* NSHTTPURLResponse+Error.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSHTTPURLResponse+Error.m"; sourceTree = "<group>"; };
 		C1AB9948114B0537005A7928 /* NSMutableURLRequest+ResponseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableURLRequest+ResponseType.h"; sourceTree = "<group>"; };
 		C1AB9949114B0537005A7928 /* NSMutableURLRequest+ResponseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+ResponseType.m"; sourceTree = "<group>"; };
-		C1AB994A114B0537005A7928 /* NSObject+ObjectiveResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+ObjectiveResource.h"; sourceTree = "<group>"; };
-		C1AB994B114B0537005A7928 /* NSObject+ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+ObjectiveResource.m"; sourceTree = "<group>"; };
+		C1AB994B114B0537005A7928 /* ObjectiveResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveResource.m; sourceTree = "<group>"; };
 		C1AB994E114B0537005A7928 /* CoreSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreSupport.h; sourceTree = "<group>"; };
 		C1AB9950114B0537005A7928 /* NSString+InflectionSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+InflectionSupport.h"; sourceTree = "<group>"; };
 		C1AB9951114B0537005A7928 /* NSString+InflectionSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+InflectionSupport.m"; sourceTree = "<group>"; };
@@ -254,14 +254,14 @@
 				C1AB9947114B0537005A7928 /* NSHTTPURLResponse+Error.m */,
 				C1AB9948114B0537005A7928 /* NSMutableURLRequest+ResponseType.h */,
 				C1AB9949114B0537005A7928 /* NSMutableURLRequest+ResponseType.m */,
-				C1AB994A114B0537005A7928 /* NSObject+ObjectiveResource.h */,
-				C1AB994B114B0537005A7928 /* NSObject+ObjectiveResource.m */,
+				C1AB994B114B0537005A7928 /* ObjectiveResource.m */,
 				C1AB994C114B0537005A7928 /* objective_support */,
 				C1AB9989114B0537005A7928 /* ObjectiveResource.h */,
 				C1AB998A114B0537005A7928 /* ObjectiveResourceConfig.h */,
 				C1AB998B114B0537005A7928 /* ObjectiveResourceConfig.m */,
 				C1AB998C114B0537005A7928 /* Response.h */,
 				C1AB998D114B0537005A7928 /* Response.m */,
+				5FAFDEFF114F613F00AC10D8 /* ORSResponseFormat.h */,
 			);
 			path = objective_resource;
 			sourceTree = "<group>";
@@ -445,7 +445,7 @@
 				C1AB998F114B0537005A7928 /* ConnectionDelegate.m in Sources */,
 				C1AB9990114B0537005A7928 /* NSHTTPURLResponse+Error.m in Sources */,
 				C1AB9991114B0537005A7928 /* NSMutableURLRequest+ResponseType.m in Sources */,
-				C1AB9992114B0537005A7928 /* NSObject+ObjectiveResource.m in Sources */,
+				C1AB9992114B0537005A7928 /* ObjectiveResource.m in Sources */,
 				C1AB9993114B0537005A7928 /* NSString+InflectionSupport.m in Sources */,
 				C1AB9994114B0537005A7928 /* NSData+Additions.m in Sources */,
 				C1AB9995114B0537005A7928 /* NSObject+PropertySupport.m in Sources */,

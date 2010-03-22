@@ -1,0 +1,3 @@
+[submodule "Classes/ObjectiveResource"]
+	path = Classes/ObjectiveResource
+	url = git@github.com:ckhsponge/objectiveresource.git
